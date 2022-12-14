@@ -4,6 +4,7 @@
  */
 package p61.unidad03_04.vista;
 
+import javax.swing.JOptionPane;
 import p61.unidad03_04.controlador.CiudadControl;
 
 /**
@@ -175,9 +176,13 @@ public class VentanaCiudad extends javax.swing.JInternalFrame {
         data[1] = this.jTextField2.getText();
         data[2] = this.jTextField3.getText();
         data[3] = this.jTextField4.getText();
-
+        var pol= JOptionPane.showConfirmDialog(this, "Estas seguro de guardar los datos");
+        if(pol==0){
         this.ciudadControl.crear(data);
         this.actualizarTabla();
+          JOptionPane.showMessageDialog(this, "Se registro con exito");
+        }
+        
 
     }//GEN-LAST:event_jButton1ActionPerformed
 

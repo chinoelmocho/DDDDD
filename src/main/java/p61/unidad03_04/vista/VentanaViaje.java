@@ -5,6 +5,7 @@
 package p61.unidad03_04.vista;
 
 import java.util.Set;
+import javax.swing.JOptionPane;
 import p61.unidad03_04.controlador.CiudadControl;
 import p61.unidad03_04.controlador.ViajeControl;
 
@@ -203,9 +204,14 @@ public class VentanaViaje extends javax.swing.JInternalFrame {
         data[3] = this.jTextField4.getText();
         data[4] = this.jTextField5.getText();
         data[5] = this.jTextField6.getText();
-
+var pol= JOptionPane.showConfirmDialog(this, "Estas seguro de guardar los datos","System Reference",JOptionPane.INFORMATION_MESSAGE);
+        if(pol==0){
         this.viajeControl.crear(data);
         this.actualizarTabla();
+        JOptionPane.showMessageDialog(this, "Se registro con exito");
+      
+        }
+        
         
 
     }//GEN-LAST:event_jButton1ActionPerformed
